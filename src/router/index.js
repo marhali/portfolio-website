@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueHead from 'vue-head'
 import Landing from '@/views/Landing'
 
+Vue.use(VueHead)
 Vue.use(VueRouter)
 
 const routes = [
