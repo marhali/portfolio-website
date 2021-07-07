@@ -48,7 +48,7 @@
               :key="tool.title"
               :to="tool.to"
               :href="tool.href"
-              class="mr-1 mb-1"
+              class="mr-2 mb-2"
             >
               {{ tool.title }}
             </ChipLink>
@@ -63,7 +63,7 @@
               :key="project.title"
               :href="project.href"
               :to="project.to"
-              class="mr-1 mb-1"
+              class="mr-2 mb-2"
             >
               {{ project.title }}
             </chip-link>
