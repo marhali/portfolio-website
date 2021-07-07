@@ -87,6 +87,13 @@ export default {
 
   components: {IconLink, ChipLink},
 
+  head: {
+    title: {
+      inner: 'marhali.de',
+      complement: 'portfolio'
+    }
+  },
+
   data() {
     return {
       socials: [
