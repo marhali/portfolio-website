@@ -11,11 +11,6 @@ const routes = [
     path: '/',
     name: 'Landing',
     component: Landing
-  },
-  {
-    path: '/tools/open-graph-tester',
-    name: 'OpenGraphTester',
-    component: () => import('@/views/tools/OpenGraphTester')
   }
 ]
 

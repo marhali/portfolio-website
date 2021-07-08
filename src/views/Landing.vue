@@ -41,21 +41,6 @@
         </section>
 
         <section>
-          <h2>Tools</h2>
-          <p>
-            <ChipLink
-              v-for="tool in tools"
-              :key="tool.title"
-              :to="tool.to"
-              :href="tool.href"
-              class="mr-2 mb-2"
-            >
-              {{ tool.title }}
-            </ChipLink>
-          </p>
-        </section>
-
-        <section>
           <h2>Projects</h2>
           <p>
             <chip-link
