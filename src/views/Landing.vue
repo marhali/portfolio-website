@@ -7,7 +7,7 @@
             <v-img
               class="ma-5"
               width="30vw"
-              max-width="250px"
+              max-width="200px"
               src="@/assets/profile.png"
             />
           </div>
