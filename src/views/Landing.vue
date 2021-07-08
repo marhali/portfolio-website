@@ -8,7 +8,7 @@
               class="ma-5"
               width="30vw"
               max-width="200px"
-              src="@/assets/profile.png"
+              src="profile.png"
             />
           </div>
         </v-row>
