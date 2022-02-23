@@ -113,6 +113,10 @@ export default {
           href: 'https://github.com/marhali/easy-i18n'
         },
         {
+          title: 'json5-java',
+          href: 'https://github.com/marhali/json5-java'
+        },
+        {
           title: 'portfolio-website',
           href: 'https://github.com/marhali/portfolio-website'
         }
