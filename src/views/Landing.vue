@@ -106,7 +106,7 @@ export default {
       projects: [
         {
           title: 'oceanpearl.io',
-          href: 'https://oceanpearl.io'
+          href: 'https://github.com/ocean-tech-ship'
         },
         {
           title: 'easy-i18n',
