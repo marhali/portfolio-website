@@ -1,0 +1,53 @@
+# GitHub Actions Workflow to publish to build artifact to GitHub pages.
+# Workflow runs: when "Build" workflow has successfully completed AND the branch is main.
+# Job execution order:
+# - publish
+
+name: Publish
+
+on:
+  workflow_run:
+    workflows: [ "Build" ]
+    types: [ completed ]
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: >
+      ${{
+        github.event.workflow_run.conclusion == 'success' &&
+        github.event.workflow_run.head_branch == 'main'
+      }}
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      actions: read
+      contents: read
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Download build artifact from build workflow
+        uses: actions/download-artifact@v4
+        with:
+          name: build
+          path: ./www
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./www
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
